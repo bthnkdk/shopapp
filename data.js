@@ -7,7 +7,6 @@ module.exports = function(){
             {id:4,name:"Samsung S8",price:4000,imageUrl:'4.jpg',description:"İdare eder"},
             {id:5,name:"Samsung S9",price:5000,imageUrl:'5.jpg',description:"İdare eder"},
             {id:6,name:"Samsung S10",price:6000,imageUrl:'6.jpg',description:"İdare eder"},
-            {id:7,name:"Samsung S11",price:7000,imageUrl:'7.jpg',description:"İdare eder"}
         ],
         categories:[
             {id:1,name:"Telefon"},

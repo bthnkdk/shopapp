@@ -5,20 +5,33 @@ import { Product } from '../model/product.model';
 import { ProductRespository } from '../model/product.repository';
 
 @Component({
-    selector:'shop',
-    templateUrl:'shop.component.html'
+  selector: 'shop',
+  templateUrl: 'shop.component.html',
+  styles: [
+    `
+      .pt-100 {
+        padding-top: 100px;
+      }
+    `,
+  ],
 })
-export class ShopComponent{
-    constructor(
-        private productRepository :ProductRespository,
-        private categoryRepository : CategoryRespository
-    ){}
+export class ShopComponent {
+  public selectedCategory: number = null;
 
-    get products():Product[]{
-        return this.productRepository.getProducts();
-    }
+  constructor(
+    private productRepository: ProductRespository,
+    private categoryRepository: CategoryRespository
+  ) {}
 
-    get categories():Category[]{
-        return this.categoryRepository.getCategories();
-    }
+  get products(): Product[] {
+    return this.productRepository.getProducts();
+  }
+
+  get categories(): Category[] {
+    return this.categoryRepository.getCategories();
+  }
+
+  changeCategory(newCategory?: number) {
+    this.selectedCategory = newCategory;
+  }
 }
