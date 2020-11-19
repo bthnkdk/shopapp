@@ -16,7 +16,7 @@ import { ProductRespository } from '../model/product.repository';
   ],
 })
 export class ShopComponent {
-  public selectedCategory: number = null;
+  public selectedCategory: Category = null;
 
   constructor(
     private productRepository: ProductRespository,
@@ -24,14 +24,14 @@ export class ShopComponent {
   ) {}
 
   get products(): Product[] {
-    return this.productRepository.getProducts();
+    return this.productRepository.getProducts(this.selectedCategory);
   }
 
   get categories(): Category[] {
     return this.categoryRepository.getCategories();
   }
 
-  changeCategory(newCategory?: number) {
+  changeCategory(newCategory?: Category) {
     this.selectedCategory = newCategory;
   }
 }
